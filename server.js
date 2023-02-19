@@ -15,6 +15,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () =>
 app.use(cors());
 app.use(bodyParser.json());
 
-
+const users = require("./routes/userRoutes");
+app.use("/users", users);
 
 app.listen(process.env.PORT || 3000);
